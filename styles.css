@@ -3,20 +3,26 @@
    ========================================================================== */
 :root {
   --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
-  /* Color Palette */
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-card: #1e293b;
-  --bg-card-hover: #334155;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent: #38bdf8;
-  --accent-hover: #0ea5e9;
-  --accent-light: rgba(56, 189, 248, 0.12);
-  --border-color: #334155;
-  --badge-green: #10b981;
-  --badge-green-bg: rgba(16, 185, 129, 0.15);
+
+  /* Color Palette (dark green theme) */
+  --bg-primary: #0b1a14;
+  --bg-secondary: #12271e;
+  --bg-card: #12271e;
+  --bg-card-hover: #1b3a2c;
+  --bg-alt: #0f2119;
+  --text-main: #ecf7f0;
+  --text-body: #c9e4d6;
+  --text-muted: #8fb3a1;
+  --accent: #3ddc97;
+  --accent-hover: #22c283;
+  --accent-light: rgba(61, 220, 151, 0.12);
+  --accent-border: rgba(61, 220, 151, 0.4);
+  --on-accent: #06130d;
+  --border-color: #1f3d2f;
+  --border-hover: #2f5a45;
+  --badge-color: #fbbf24;
+  --badge-bg: rgba(251, 191, 36, 0.15);
+  --badge-border: rgba(251, 191, 36, 0.4);
 
   /* Layout & Spacing */
   --max-width: 1040px;
@@ -56,7 +62,7 @@ body {
 }
 
 .bg-alt {
-  background-color: #131d34;
+  background-color: var(--bg-alt);
 }
 
 .section-title {
@@ -86,7 +92,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(11, 26, 20, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
@@ -138,12 +144,12 @@ body {
   border-radius: 9999px;
   background: var(--accent-light);
   color: var(--accent) !important;
-  border: 1px solid rgba(56, 189, 248, 0.4);
+  border: 1px solid var(--accent-border);
 }
 
 .btn-nav:hover {
   background: var(--accent);
-  color: var(--bg-primary) !important;
+  color: var(--on-accent) !important;
 }
 
 /* ==========================================================================
@@ -185,9 +191,9 @@ body {
   bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--badge-green-bg);
-  color: var(--badge-green);
-  border: 1px solid rgba(16, 185, 129, 0.4);
+  background-color: var(--badge-bg);
+  color: var(--badge-color);
+  border: 1px solid var(--badge-border);
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -247,13 +253,13 @@ body {
 
 .btn-primary {
   background-color: var(--accent);
-  color: #0b1120;
+  color: var(--on-accent);
 }
 
 .btn-primary:hover {
   background-color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 20px rgba(61, 220, 151, 0.25);
 }
 
 .btn-secondary {
@@ -276,7 +282,7 @@ body {
   border-radius: var(--border-radius);
   padding: 2.25rem;
   font-size: 1.05rem;
-  color: #cbd5e1;
+  color: var(--text-body);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -308,7 +314,7 @@ body {
   height: 14px;
   border-radius: 50%;
   background-color: var(--accent);
-  border: 3px solid var(--bg-primary);
+  border: 3px solid var(--bg-alt);
 }
 
 .timeline-date {
@@ -332,7 +338,7 @@ body {
 }
 
 .timeline-desc {
-  color: #cbd5e1;
+  color: var(--text-body);
   font-size: 0.95rem;
   max-width: 700px;
 }
@@ -370,7 +376,7 @@ body {
 .tag {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  color: #e2e8f0;
+  color: var(--text-body);
   padding: 0.35rem 0.8rem;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -403,7 +409,7 @@ body {
 .card:hover {
   transform: translateY(-4px);
   background-color: var(--bg-card-hover);
-  border-color: #475569;
+  border-color: var(--border-hover);
 }
 
 .card-icon {
@@ -488,7 +494,7 @@ body {
 
 .social-btn:hover {
   background-color: var(--accent);
-  color: var(--bg-primary);
+  color: var(--on-accent);
   border-color: var(--accent);
 }
 
